@@ -21,8 +21,9 @@ body {
 }
 
 .weather-form .location{
+    width: 100%;
     border: none;
-    border-bottom: #888888 1px solid;
+    border-bottom: #999999 .25px solid;
     outline: none;
     padding: 10px;
     font-size: 28px;
@@ -31,24 +32,6 @@ body {
     border-color: #555555;
 }
 
-.weather-form button{
-    border: none;
-    font-weight: 100;
-    color: #d8d8d8;
-    background-color: #888888;
-    padding: 10px;
-    outline: none;
-    cursor: pointer;
-    font-size: 28px;
-    transition: 500ms;
-}
-.weather-form button:hover{
-    background-color: #333333;
-    outline: none;
-    transform: scale(1.05);
-    transition: 500ms;
-
-}
 .main-content{
     flex-grow: 1;
 }
