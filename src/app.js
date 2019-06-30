@@ -46,9 +46,21 @@ app.get('/weather', (req, res) => {
             error: "You must provide an address"
         })
     }
-    res.send({
-        address: req.query.address,
-    });
+    geocode(req.query.address, (error, {latitude, longitude} = {}) => {
+        if (!error) {
+            forecast(latitude, longitude, (error, {summary, precipProbability, currentTemperature}) => {
+                if (!error) {
+                    res.send({summary, precipProbability, currentTemperature})
+                } else {
+                    res.send({error: 'Cannot fetch weather for this location'})
+                }
+            })
+        } else {
+            res.send({
+                error: 'Invalid location'
+            })
+        }
+    })
 });
 
 app.get('/products', (req, res) => {
