@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main</title>
+    <title>Forecast</title>
     <link rel="icon" href="/img/umbrella.png">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 <div class="main-content">
     {{>header}}
-    <p>Use this site to get your weather</p>
 
-    <form action="">
-        <input  class="form-input" type="text" placeholder="Enter the location">
+    <form class="weather-form">
+        <input  class="location" type="text" placeholder="Enter the location" required>
         <button>Search</button>
     </form>
     <h3 id="weather-summary"></h3>
